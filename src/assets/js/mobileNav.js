@@ -13,5 +13,3 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.remove("show-sidebar");
     });
 });
-
-

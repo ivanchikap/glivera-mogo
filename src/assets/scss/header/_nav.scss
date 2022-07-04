@@ -1,0 +1,57 @@
+.nav {
+  $root: &;
+  width: 80%;
+
+  @include tablet {
+    display: none;
+  }
+
+  &--sidebar {
+    display: flex;
+
+    #{$root} {
+      &__list {
+        flex-direction: column;
+      }
+
+      &__item-wrapper {
+        width: 100%;
+      }
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+  }
+
+  &__item-wrapper {
+    width: 20%;
+    padding: 0 2.7rem;
+
+    @include laptop {
+      padding: 0 1rem;
+    }
+  }
+
+  &__item {
+    padding: 1.2rem 0;
+    color: $white;
+    font-family: $montserrat;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+    transition: all .2s linear;
+    @extend .text-overflow;
+
+    &.active {
+      border-color: $yellow;
+      color: $yellow;
+    }
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+}

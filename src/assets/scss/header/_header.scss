@@ -1,10 +1,306 @@
 .header {
+  $root: &;
+  position: relative;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include mobile-large {
+    min-height: auto;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    overflow: hidden;
+
+    @include mobile-large {
+      min-height: auto;
+    }
+  }
 
   &__top {
     position: relative;
-    z-index: 4;
-    background-color: #999;
-    padding: 0.5rem;
-    min-height: 4rem;
+    z-index: 5;
+    display: flex;
+    padding: 2.8rem 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    color: $white;
+    font-family: $montserrat;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: normal;
+    transition: transform .2s linear;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+    padding-left: 1.5rem;
+
+    @include tablet {
+      padding-left: 1rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    padding-left: 1.5rem;
+    max-width: 20%;
+
+    @include tablet {
+      padding-left: 1rem;
+      margin-right: 8rem;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  &__action-item {
+    display: flex;
+    flex-shrink: 0;
+    padding: 0 1rem;
+    transition: transform .2s linear;
+    border-bottom: 1rem solid transparent;
+
+    @include tablet {
+      padding: 0 0.5rem;
+      border-bottom: none;
+    }
+
+    & + & {
+      margin-left: 2.2rem;
+
+      @include tablet {
+        margin-left: 1.2rem;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__img {
+    width: 18px;
+    height: auto;
+  }
+
+  &__middle {
+    max-width: 87rem;
+    padding: 0 1.5rem;
+    margin: 10rem auto 13rem auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @include tablet {
+      max-width: 90%;
+      margin: 4rem auto 6rem auto;
+    }
+
+    @include mobile-large {
+      max-width: 90%;
+      margin: 2rem auto 4rem auto;
+    }
+
+    @include mobile {
+      max-width: 95%;
+    }
+  }
+
+  &__title {
+    order: 2;
+    color: $white;
+    font-family: $montserrat;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 0.9;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: 9rem;
+    }
+
+    @include mobile-large {
+      font-size: 5rem;
+      line-height: 1;
+    }
+
+    @include mobile {
+      font-size: 4rem;
+      line-height: 1;
+    }
+  }
+
+  &__subtitle {
+    order: 1;
+    color: $white;
+    font-family: $kaushan;
+    font-size: 7.2rem;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      font-size: 5rem;
+    }
+
+    @include mobile-large {
+      font-size: 3rem;
+    }
+
+    @include mobile {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    order: 2;
+    text-align: center;
+    padding: 5rem 0;
+    margin-top: 5rem;
+
+    @include tablet {
+      padding: 3rem 0;
+      margin-top: 3rem;
+    }
+
+    @include mobile-large {
+      padding: 3rem 0;
+      margin-top: 3rem;
+    }
+
+    @include mobile {
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+
+    :before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6rem;
+      height: .3rem;
+      background-color: $white;
+    }
+  }
+
+  &__bottom {
+    margin-top: auto;
+    padding-bottom: .3rem;
+  }
+
+  &__item {
+    max-width: 100%;
+    color: rgba($white, 0.7);
+    cursor: pointer;
+    transition: all .3s linear;
+
+    &.active {
+      color: $white;
+
+      #{$root} {
+        &__item-line {
+          background-color: $white;
+
+          &::before {
+            background-color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  &__item-line {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 3px;
+    background-color: rgba($white, .5);
+    transition: all .3s linear;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 28%;
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      transition: all .3s linear;
+    }
+  }
+
+  &__item-info {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    font-family: $montserrat;
+
+    @include mobile-large {
+      padding: 1.6rem 0;
+    }
+
+    @include mobile {
+      padding: 1rem 0;
+    }
+  }
+
+  &__item-number {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: normal;
+    padding-right: .4rem;
+
+    @include mobile-large {
+      font-size: 2rem;
+    }
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__item-title {
+    font-size: 1.8rem;
+    line-height: normal;
+    text-transform: uppercase;
+
+    @include mobile-large {
+      font-size: 1.6rem;
+    }
+
+    @include mobile {
+      font-size: 1.2rem;
+    }
+  }
+
+  @include mobile {
+    .col-sm-6:not(:nth-child(-n + 2)) {
+      margin-top: 1rem;
+    }
   }
 }
