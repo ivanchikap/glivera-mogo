@@ -1,3 +1,46 @@
 .section {
-  padding: 10rem 0;
+  padding: 9rem 0 11rem 0;
+  
+  &__header {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto 10rem auto;
+  }
+
+  &__title {
+    color: $black-text;
+    font-family: $montserrat;
+    font-size: 3rem;
+    font-weight: 700;   
+    line-height: normal;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 1rem;
+    padding-bottom: 3.5rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: $red;
+
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__subtitle {
+    font-family: $kaushan;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__description {
+    color: $gray-text;
+    margin-top: 4rem;
+  }
 }
