@@ -1,0 +1,56 @@
+.accordion {
+  $root: &;
+
+  &__item {
+    border: 1px solid #e5e5e5;
+    padding: 1.5rem;
+
+    & + & {
+      margin-top: 1rem;
+    }
+
+    &.active {
+      #{$root} {
+        &__body {
+          display: block;
+          height: 3rem;
+        }
+      }
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    color: $black-text;
+    font-family: $montserrat;
+    font-size: 14px;
+    line-height: normal;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 32px;
+      height: 32px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-right: 1.4rem;
+    }
+
+    &--photography::before {
+      background-image: url(../images/wedo/photography.svg);
+    }
+    &--creativity::before {
+      background-image: url(../images/wedo/creativity.svg);
+    }
+    &--webdesign::before {
+      background-image: url(../images/wedo/webdesign.svg);
+    }
+  }
+
+  &__body {
+    display: none;
+    height: 0;
+  }
+}

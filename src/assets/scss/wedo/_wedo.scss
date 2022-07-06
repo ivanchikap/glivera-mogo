@@ -1,0 +1,20 @@
+.wedo {
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__img {
+    width: 50%;
+    padding-right: 3rem;
+
+    img {
+      @extend .img-cover;
+    }
+  }
+
+  &__accordion-wrapper {
+    width: 50%;
+  }
+}
