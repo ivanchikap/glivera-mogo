@@ -1,0 +1,56 @@
+.card {
+  display: flex;
+
+  &::before {
+    content: "";
+    display: block;
+    background-repeat: no-repeat;
+    background-size: 3.2rem 3.2rem;
+    background-position: center top;
+    padding: 0 3.8rem;
+  }
+
+  &--photography::before {
+    background-image: url(../images/services/photography.svg);
+  }
+
+  &--design::before {
+    background-image: url(../images/services/design.svg);
+  }
+
+  &--creativity::before {
+    background-image: url(../images/services/creativity.svg);
+  }
+
+  &--seo::before {
+    background-image: url(../images/services/seo.svg);
+  }
+
+  &--csshtml::before {
+    background-image: url(../images/services/css-html.svg);
+  }
+
+  &--digital::before {
+    background-image: url(../images/services/digital.svg);
+  }
+
+
+  &__info {
+    padding-right: .8rem;
+  }
+
+  &__title {
+    color: $black-text;
+    font-family: $montserrat;
+    font-size: 14px;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+  }
+
+  &__text {
+    color: $gray-text;
+    font-family: $roboto;
+    line-height: normal;
+  }
+}
