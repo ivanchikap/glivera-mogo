@@ -1,8 +1,72 @@
 .design {
+  position: relative;
   height: 85rem;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
 
+  @include tablet {
+    height: 80rem;
+  }
 
+  @include mobile-large {
+    height: 47rem;
+  }
+
+  @include mobile {
+    height: 40rem;
+  }
+
+
+  .section__header {
+    margin-bottom: 4.5rem;
+  }
+
+  &__ipad {
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%;
+    width: 47.7rem;
+    height: 58.8rem;
+
+    @include mobile-large {
+      width: 25rem;
+      height: 31rem;
+    }
+
+    @include mobile {
+      width: 21rem;
+      height: 26rem;
+    }
+
+    img {
+      @extend .img-cover;
+      object-position: center top;
+    }
+  }
+
+  &__iphone {
+    position: absolute;
+    right: -13.6rem;
+    bottom: -8rem;
+    display: block;
+    width: 27.4rem;
+    height: 47.6rem;
+
+    @include mobile-large {
+      width: 10rem;
+      height: 18rem;
+      right: -4rem;
+      bottom: -2rem;
+    }
+
+    @include mobile {
+      width: 7rem;
+      height: 12rem;
+      right: -3rem;
+      bottom: -1rem;
+    }
+  }
 }
