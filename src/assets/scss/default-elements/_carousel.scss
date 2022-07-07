@@ -4,10 +4,25 @@
   height: 29rem;
   margin: 0 auto;
 
+  @include tablet {
+    height: 43rem;
+  }
+
+  @include mobile {
+    height: 40rem;
+  }
 
   &__wrapper {
     height: 29rem;
     background-color: #f8f8f8;
+
+    @include tablet {
+      height: 43rem;
+    }
+
+    @include mobile {
+      height: 40rem;
+    }
   }
 
   &__content {
@@ -56,6 +71,17 @@
   &__item {
     display: flex;
     padding: 7rem 8rem;
+    overflow: hidden;
+
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+      padding: 4rem 5rem;
+    }
+
+    @include mobile {
+      padding: 2rem;
+    }
   }
 
   &__item-image {
@@ -65,22 +91,37 @@
     border: 3px solid $aqua;
     margin-right: 6rem;
     background: url("../images/carousel-icon.svg") no-repeat center / 63px 61px;
+
+    @include tablet {
+      margin: 0 auto 3rem auto;
+    }
+
+    @include mobile {
+      width: 12rem;
+      height: 12rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__item-info {
+    font-size: 2.4rem;
+    line-height: normal;
+
+    @include mobile {
+      font-size: 2rem;
+    }
   }
 
   &__item-text {
     color: $gray-text;
     font-family: $roboto;
     font-style: italic;
-    font-size: 2.4rem;
-    line-height: normal;
   }
 
   &__item-author {
     margin-top: 1.5rem;
     color: $black-text;
-    font-family: "Kaushan Script";
-    font-size: 2.4rem;
-    line-height: normal;
+    font-family: $kaushan;
 
     &::before {
       content: "";
