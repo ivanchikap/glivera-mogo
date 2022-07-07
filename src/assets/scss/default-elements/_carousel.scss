@@ -13,16 +13,7 @@
   }
 
   &__wrapper {
-    height: 29rem;
     background-color: #f8f8f8;
-
-    @include tablet {
-      height: 43rem;
-    }
-
-    @include mobile {
-      height: 40rem;
-    }
   }
 
   &__content {
@@ -33,6 +24,9 @@
   }
 
   &__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     position: absolute;
     z-index: 1;
@@ -67,7 +61,6 @@
     }
   }
 
-
   &__item {
     display: flex;
     padding: 7rem 8rem;
@@ -77,6 +70,10 @@
       flex-direction: column;
       text-align: center;
       padding: 4rem 5rem;
+    }
+
+    @include mobile-large {
+      padding: 3rem 4rem;
     }
 
     @include mobile {
