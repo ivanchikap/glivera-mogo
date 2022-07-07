@@ -1,0 +1,95 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 29rem;
+  margin: 0 auto;
+
+
+  &__wrapper {
+    height: 29rem;
+    background-color: #f8f8f8;
+  }
+
+  &__content {
+    position: relative;
+    overflow: hidden;
+    transition: width .4s;
+    height: 100%;
+  }
+
+  &__slide {
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    transition: left .4s cubic-bezier(.47,.13,.15,.89);
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-bottom: 3px solid #ccc;
+    border-left: 3px solid #ccc;
+    transition: border-color .2s linear;
+
+    &:hover {
+      border-color: $black-text;
+    }
+
+    &--left {
+      left: 0.4rem;
+      transform: rotate(45deg);
+
+    }
+
+    &--right {
+      right: 0.4rem;
+      transform: rotate(-135deg);
+    }
+  }
+
+
+  &__item {
+    display: flex;
+    padding: 7rem 8rem;
+  }
+
+  &__item-image {
+    flex-shrink: 0;
+    width: 15rem;
+    height: 15rem;
+    border: 3px solid $aqua;
+    margin-right: 6rem;
+    background: url("../images/carousel-icon.svg") no-repeat center / 63px 61px;
+  }
+
+  &__item-text {
+    color: $gray-text;
+    font-family: $roboto;
+    font-style: italic;
+    font-size: 2.4rem;
+    line-height: normal;
+  }
+
+  &__item-author {
+    margin-top: 1.5rem;
+    color: $black-text;
+    font-family: "Kaushan Script";
+    font-size: 2.4rem;
+    line-height: normal;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 6rem;
+      height: .3rem;
+      background-color: $red;
+      vertical-align: middle;
+      margin-right: 1rem;
+    }
+  }
+}
