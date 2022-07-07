@@ -3,18 +3,34 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
+
+    @include tablet {
+      flex-direction: column;
+    }
   }
 
   &__img {
     width: 50%;
+    height: 39rem;
+    overflow: hidden;
     padding-right: 3rem;
 
     img {
       @extend .img-cover;
     }
+
+    @include tablet {
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 3rem;
+    }
   }
 
   &__accordion-wrapper {
     width: 50%;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 }
