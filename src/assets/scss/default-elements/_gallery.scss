@@ -1,0 +1,92 @@
+.gallery {
+  $root: &;
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 39rem;
+  overflow: hidden;
+
+  @include tablet {
+    height: 78rem;
+  }
+
+  &__item {
+    position: relative;
+    height: 19.5rem;
+    width: 25%;
+    cursor: pointer;
+
+    &:hover {
+      #{$root} {
+        &__item-img {
+          img {
+            opacity: .1;
+          }
+        }
+        &__item-info {
+          opacity: 1;
+        }
+      }
+    }
+
+    img {
+      @extend .img-cover;
+      transition: opacity .2s linear;
+    }
+
+    &--fullheight {
+      height: 39rem;
+    }
+
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__item-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    background-image: linear-gradient(to top, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+    transition: all .2s linear;
+  }
+
+  &__item-info {
+    position: absolute;
+    max-width: 100%;
+    max-height: 92%;
+    padding: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .2s ease-in;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      margin-bottom: 1rem;
+      background: url("../images/work/gallery-icon.svg") no-repeat center / contain;
+    }
+  }
+
+  &__item-title {
+    font-family: $montserrat;
+    font-size: 1.4rem;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    @extend .text-overflow;
+  }
+
+  &__item-text {
+    font-style: italic;
+  }
+}

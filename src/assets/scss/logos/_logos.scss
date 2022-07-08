@@ -1,0 +1,43 @@
+.logos {
+  height: 25rem;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    height: auto;
+    padding: 3rem 0;
+  }
+
+  .col-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include tablet {
+    .col-md-4:not(:nth-child(-n + 3)) {
+      margin: 1rem auto 0 auto;
+    }
+  }
+
+  @include mobile {
+    .col-xs-12:not(:nth-child(-n + 2)) {
+      margin-top: 1rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    width: 17.5rem;
+    height: 18rem;
+    overflow: hidden;
+
+    img {
+      @extend .img-contain;
+    }
+  }
+}
