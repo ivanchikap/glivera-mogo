@@ -28,21 +28,24 @@ const path = {
         js:     distPath + "assets/js/",
         css:    distPath + "assets/css/",
         images: distPath + "assets/images/",
-        fonts:  distPath + "assets/fonts/"
+        fonts:  distPath + "assets/fonts/",
+        plugins:  distPath + "assets/plugins/"
     },
     src: {
         html:   srcPath + "*.html",
         js:     srcPath + "assets/js/*.js",
         css:    srcPath + "assets/scss/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}",
+        plugins:  srcPath + "assets/plugins/**/*.*"
     },
     watch: {
         html:   srcPath + "**/*.html",
         js:     srcPath + "assets/js/**/*.js",
         css:    srcPath + "assets/scss/**/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}",
+        plugins:  srcPath + "assets/plugins/**/*.*"
     },
     clean: "./" + distPath
 };
@@ -198,6 +201,14 @@ function fonts(cb) {
     cb();
 }
 
+function plugins(cb) {
+    return src(path.src.plugins)
+        .pipe(dest(path.build.plugins))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
+}
+
 function clean(cb) {
     return del(path.clean);
 
@@ -210,9 +221,10 @@ function watchFiles() {
     gulp.watch([path.watch.js], jsWatch);
     gulp.watch([path.watch.images], images);
     gulp.watch([path.watch.fonts], fonts);
+    gulp.watch([path.watch.plugins], plugins);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts, plugins));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
@@ -223,6 +235,7 @@ exports.css = css;
 exports.js = js;
 exports.images = images;
 exports.fonts = fonts;
+exports.plugins = plugins;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
