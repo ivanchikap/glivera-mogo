@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             accordionItems.forEach((item) => {
                 item.classList.remove("active");
-            })
+            });
 
             accordionItem.classList.toggle('active');
         }

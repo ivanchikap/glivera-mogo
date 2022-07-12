@@ -1,0 +1,83 @@
+.say {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__item {
+    display: flex;
+  }
+
+  &__img {
+    width: 11rem;
+    height: 11rem;
+    margin: 0 3rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      @extend .img-cover;
+    }
+
+    @include mobile {
+      width: 7rem;
+      height: 7rem;
+      margin: 0 1rem;
+    }
+  }
+
+  &__name {
+    color: $black-text;
+    font-family: $montserrat;
+    font-size: 1.4rem;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    @extend .text-overflow;
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+  }
+
+  &__position {
+    display: inline-block;
+    padding-bottom: 1.2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    color: $black-text;
+    font-family:$roboto;
+    font-weight: 300;
+    font-style: italic;
+    @extend .text-overflow;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: $red;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+      padding-bottom: 0.6rem;
+    }
+  }
+
+  &__text {
+    color: $gray-text;
+  }
+
+  .col-6:not(:nth-child(-n + 2)) {
+    margin-top: 6rem;
+  }
+
+  @include tablet {
+    .col-md-12:not(:nth-child(-n + 1)) {
+      margin-top: 4rem;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.footer {
+  padding: 2.3rem 0;
+  text-align: center;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e5e5e5;
+
+  &__text {
+    font-family: $montserrat;
+    font-size: 1.4rem;
+    line-height: normal;
+  }
+  &__link {
+    color: $red;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.blog {
+  @include tablet {
+    .col-md-6:not(:nth-child(-n + 2)) {
+      margin-top: 3rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @include mobile {
+    .col-xs-12:not(:nth-child(-n + 1)) {
+      margin-top: 2rem;
+    }
+  }
+}

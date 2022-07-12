@@ -1,0 +1,64 @@
+.contact {
+  background-color: #f8f8f8;
+
+  &__title {
+    color: #cccccc;
+    font-family: $montserrat;
+    font-size: 4.6rem;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 3rem;
+  }
+
+  &__text {
+    color: $gray-text;
+  }
+
+  &__socials {
+    margin: 4rem 0 3rem 0;
+  }
+
+  &__socials-list {
+    display: flex;
+    align-items: center;
+    padding-top: 1.6rem;
+  }
+
+  &__followers {
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #e5e5e5;
+    font-family: $montserrat;
+    font-size: 1.4rem;
+    line-height: normal;
+  }
+
+  &__followers-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  &__socials-dt {
+    margin-right: 2rem;
+    color: $gray-text;
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  &__socials-dd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .7rem;
+  }
+
+  &__socials-icon {
+    fill: $aqua;
+    cursor: pointer;
+    transition: fill .2s linear;
+
+    &:hover {
+      fill: $red;
+    }
+  }
+}
