@@ -1,3 +1,10 @@
 .instagram {
+  display: flex;
+  flex-wrap: wrap;
 
+  &__item {
+    width: 33.33333%;
+    border: 1px solid transparent;
+    overflow: hidden;
+  }
 }

@@ -1,15 +1,82 @@
 .footer {
-  padding: 2.3rem 0;
-  text-align: center;
   background-color: #f8f8f8;
-  border-top: 1px solid #e5e5e5;
 
-  &__text {
+  &__col {
+    overflow: hidden;
+
+    &--first {
+      width: 43%;
+      padding-right: 5rem;
+
+      @include laptop {
+        padding-right: 4rem;
+      }
+
+      @include tablet {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 5rem;
+      }
+
+      @include mobile {
+        margin-bottom: 3rem;
+      }
+    }
+
+    &--second {
+      width: 34%;
+      padding-right: 7.4rem;
+
+      @include laptop {
+        padding-right: 4rem;
+      }
+      @include tablet {
+        width: 55%;
+      }
+      @include mobile-large {
+        padding-right: 2rem;
+      }
+      @include mobile {
+        width: 100%;
+        margin-bottom: 3rem;
+      }
+    }
+
+    &--third {
+      width: 23%;
+
+      @include tablet {
+        width: 45%;
+      }
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &__title {
+    color: $black-text;
+    font-family: $montserrat;
+    font-size: 1.4rem;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+
+    @include tablet {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__bottom {
+    padding: 2.3rem 0;
     font-family: $montserrat;
     font-size: 1.4rem;
     line-height: normal;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
   }
-  &__link {
+
+  &__bottom-link {
     color: $red;
 
     &:hover {

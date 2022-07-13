@@ -1,3 +1,61 @@
 .blogs {
-  
+  &__item {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    & + & {
+      margin-top: 3rem;
+
+      @include tablet {
+        margin-top: 2rem;
+      }
+
+      @include mobile-large {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  &__img {
+    width: 11.9rem;
+    height: 7.9rem;
+    flex-shrink: 0;
+
+    @include laptop {
+      width: 11rem;
+    }
+
+
+    img {
+      @extend .img-cover;
+    }
+  }
+
+  &__info {
+    padding: .7rem 0 .7rem 2rem;
+
+    @include laptop {
+      padding-left: 1rem;
+    }
+  }
+
+  &__text {
+    display: block;
+    color: $black-text;
+    font-family: $montserrat;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    line-height: normal;
+  }
+
+  &__date {
+    margin-top: 1rem;
+    color: $gray-text;
+    font-size: 1.3rem;
+    line-height: 1;
+    font-weight: 300;
+    text-align: left;
+    font-style: italic;
+  }
 }
