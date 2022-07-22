@@ -1,11 +1,11 @@
 .sidebar {
   width: 300px;
-  height: calc(100vh - 8rem);
+  height: calc(100vh - 7.3rem);
   padding: 2rem;
 
   position: fixed;
   right: 0;
-  top: 8rem;
+  top: 7.3rem;
   z-index: 4;
 
   background-color: $aqua;
@@ -14,5 +14,10 @@
 
   .show-sidebar & {
     transform: translateX(0);
+  }
+
+  @include mobile {
+    height: calc(100vh - 5.7rem);
+    top: 5.7rem;
   }
 }

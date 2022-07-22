@@ -8095,7 +8095,7 @@ a:hover {
     margin-left: auto;
     height: 100%;
     background-color: rgba(0, 0, 0, 0);
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: -1;
@@ -8642,11 +8642,11 @@ a:hover {
 
 .sidebar {
     width: 300px;
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 7.3rem);
     padding: 2rem;
     position: fixed;
     right: 0;
-    top: 8rem;
+    top: 7.3rem;
     z-index: 4;
     background-color: #95e1d3;
     -webkit-transform: translateX(101%);
@@ -8659,6 +8659,13 @@ a:hover {
 .show-sidebar .sidebar {
     -webkit-transform: translateX(0);
     transform: translateX(0);
+}
+
+@media screen and (max-width: 576px) {
+    .sidebar {
+        height: calc(100vh - 5.7rem);
+        top: 5.7rem;
+    }
 }
 
 .section {
@@ -9291,6 +9298,7 @@ a:hover {
 }
 
 .header__container {
+    position: relative;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -9312,11 +9320,27 @@ a:hover {
     z-index: 5;
     display: -ms-flexbox;
     display: flex;
-    padding: 2.8rem 0;
+    padding: 1.8rem 0;
     -ms-flex-align: center;
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 576px) {
+    .header__top {
+        padding: 1rem;
+    }
+}
+
+.header__top--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .header__logo {
