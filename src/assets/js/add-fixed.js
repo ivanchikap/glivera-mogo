@@ -11,9 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function checkScroll(scrollOffset) {
-        if (scrollOffset > headerHeight) {
+        if (scrollOffset >= headerHeight) {
             headerTop.classList.add("header__top--fixed");
-        } else {
+        }
+
+        if (scrollOffset < headerHeight - 200) {
             headerTop.classList.remove("header__top--fixed");
         }
     }
